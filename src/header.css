@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Kaushan+Script&family=Lily+Script+One&display=swap');
+
+.h_logo {
+    font-family: 'Ultra', serif;
+}
+
+.h_menu {
+    font-family: 'Roboto', sans-serif;
+}
+
+.h_cart_inner {
+    box-shadow: 0px -1px 14px 0 rgba(0, 0, 0, 0.3);
+}
+
+.h_cart_track_count {
+    font-family: 'Ultra', serif;
+    text-align: center;
+}
+
+.h_cart_track_total {
+    font-family: 'Ultra', serif;
+}
+
