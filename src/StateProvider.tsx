@@ -5,25 +5,31 @@ import React, {
 } from "react";
 
 class Item {
-    item: string;
+    name: string;
     count: number;
 
-    constructor(item: string, count: number) {
-        this.item = item;
+    constructor(name: string, count: number) {
+        this.name = name;
         this.count = count;
     }
 }
 // Define the shape of the state
 export interface State {
   shoppingCart: Item[];
-  SideIsOpen: boolean;
-  setSideIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+
+  rightSideIsOpen: boolean;
+  setRightSideIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+
+  leftSideIsOpen: boolean;
+  setLeftSideIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 // Create the context with the initial state
 const StateContext = createContext<State>({
   shoppingCart: [],
-  SideIsOpen: false,
-  setSideIsOpen: () => {},
+  rightSideIsOpen: false,
+  setRightSideIsOpen: () => {},
+  leftSideIsOpen: false,
+  setLeftSideIsOpen: () => {},
 });
 
 interface StateProviderProps {
@@ -31,12 +37,15 @@ interface StateProviderProps {
 }
 
 const StateProvider: React.FC<StateProviderProps> = ({ children }) =>  {
-  const [SideIsOpen, setSideIsOpen] = useState(false);
+  const [leftSideIsOpen, setLeftSideIsOpen] = useState(false);
+  const [rightSideIsOpen, setRightSideIsOpen] = useState(false);
   // Your state and state update logic here
   const stateValues: State = {
     shoppingCart: [new Item('Sicilian', 1), new Item('Margarits', 2) ],
-    SideIsOpen,
-    setSideIsOpen,
+    rightSideIsOpen,
+    setRightSideIsOpen,
+    leftSideIsOpen,
+    setLeftSideIsOpen,
   };
 
   return (

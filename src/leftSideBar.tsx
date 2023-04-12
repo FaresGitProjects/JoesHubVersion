@@ -1,22 +1,21 @@
-import React, { useState } from "react";
-import "sidebar.css";
-import { StateContext, StateProvider } from "StateProvider";
+import "leftSideBar.css";
+import { StateContext } from "StateProvider";
 import { useContext } from "react";
 import { State } from "StateProvider";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Sidebar() {
+function LeftSideBar() {
   const sc = useContext<State>(StateContext);
 
   return (
     <div
-      className="sidebar">
+      className="leftSideBar">
       <div
         className={`s_list 
-            border-r-2 border-t-2 sm:mt-5 -mt-1
-          border-neutral-400
-            side-menu ${sc.SideIsOpen ? "open" : ""}`}
+            border-r-2 border-t-2 sm:mt-5 mt-1
+          border-neutral-400 z-10
+            side-menu ${sc.leftSideIsOpen ? "open" : ""}`}
       >
         {/* Add your menu items here */}
         <div className="s_list_outer">
@@ -42,4 +41,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default LeftSideBar;

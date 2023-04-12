@@ -2,7 +2,8 @@
 import './tailwind.css';
 import Header from './header';
 import Welcome from './welcome';
-import Sidebar from './sidebar';
+import LeftSideBar from './leftSideBar';
+import RightSideBar from './rightSideBar';
 import { StateContext, StateProvider } from 'StateProvider';
 import { useContext } from 'react';
 import Body from './body';
@@ -21,11 +22,12 @@ function AppContent() {
     <div className="App">
       {/* <div className={`overlay 
       transition ease-in 
-      ${sc.SideIsOpen? 
+      ${sc.leftSideIsOpen || sc.rightSideIsOpen? 
       'bg-neutral-500 bg-opacity-70' : 
       'bg-white bg-opacity-0'} fixed`}></div> */}
       <Header />
-      <Sidebar />
+      <LeftSideBar />
+      <RightSideBar />
       <Welcome />
       <Body />
     </div>
