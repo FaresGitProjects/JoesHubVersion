@@ -11,27 +11,31 @@ function Sidebar() {
 
   return (
     <div
-      className="sidebar
-        "
-    >
+      className="sidebar">
       <div
         className={`s_list 
-            border-r-2 border-t-2 sm:mt-7 -mt-1
+            border-r-2 border-t-2 sm:mt-5 -mt-1
           border-neutral-400
             side-menu ${sc.SideIsOpen ? "open" : ""}`}
       >
         {/* Add your menu items here */}
-        <div className="s_list_item flex items-center">
-          <p className="s_l_i_inner w-10/12">Pizza</p>
-          <p className="-rotate-90"><FontAwesomeIcon icon={faAngleDown}/></p>
+        <div className="s_list_outer">
+          <div className="s_list_item flex items-center">
+            <p className="s_l_i_inner w-10/12">Pizza</p>
+            <p className="-rotate-90"><FontAwesomeIcon icon={faAngleDown} /></p>
+          </div>
         </div>
-        <div className="s_list_item flex items-center">
-          <p className="s_l_i_inner w-10/12">Pasta</p>
-          <p className="-rotate-90 pr-0.5"><FontAwesomeIcon icon={faAngleDown}/></p>
+        <div className="s_list_outer">
+          <div className="s_list_item flex items-center">
+            <p className="s_l_i_inner w-10/12">Pasta</p>
+            <p className="-rotate-90 pr-0.5"><FontAwesomeIcon icon={faAngleDown} /></p>
+          </div>
         </div>
-        <div className="s_list_item flex items-center">
-          <p className="s_l_i_inner w-10/12">Sides</p>
-          <p className="-rotate-90 pr-0.5"><FontAwesomeIcon icon={faAngleDown}/></p>
+        <div className="s_list_outer">
+          <div className="s_list_item flex items-center">
+            <p className="s_l_i_inner w-10/12">Sides</p>
+            <p className="-rotate-90 pr-0.5"><FontAwesomeIcon icon={faAngleDown} /></p>
+          </div>
         </div>
       </div>
     </div>

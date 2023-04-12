@@ -10,7 +10,7 @@ function Welcome() {
   return (
     <div className='welcome
     flex flex-col items-center
-    my-16 sm:my-14 pt-16'>
+    mt-16 pt-20'>
       <h1 className="w_title text-3xl font-bold mb-4">
         <span className="text-orange-500">W</span>
         <span className="text-green-500">e</span>

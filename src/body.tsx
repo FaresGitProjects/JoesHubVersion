@@ -7,7 +7,7 @@ function Body() {
       <Section 
         sectTitle='Pizza'/>
       <Section 
-        sectTitle='OtherPizza'/>
+        sectTitle='Sides'/>
     </div>
   )
 }

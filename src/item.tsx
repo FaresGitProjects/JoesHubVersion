@@ -1,7 +1,6 @@
-import React from "react";
-import Section from "section";
-import pizzaImage from "./images/pizza.jpg";
 import "./item.css"
+
+
 
 interface ItemProps {
   img: string;
@@ -13,19 +12,18 @@ function Item({ img, title, descr }: ItemProps) {
   return (
     <div
     className="item
-    sm:mr-10 my-2.5 shadow-neutral-600
+    sm:mr-5 my-2.5 shadow-neutral-600
     shadow-md border-black sm:block flex
-    rounded-lg overflow-clip
-    "
+    rounded-lg overflow-clip"
     >
       <img
-      className="sm:min-w-full w-1/3
+      className="sm:min-w-full sm:h-1/2 w-1/3
       object-cover"
       src={img}
       alt={title}
       />
       <div className="i_text
-      p-4 pb-8">
+      p-4 pb-5">
         <h1 
         className="i_t_title 
         w-fit pb-2 font-semibold
@@ -33,6 +31,8 @@ function Item({ img, title, descr }: ItemProps) {
         <p className="i_t_descr
         ">{descr}</p>
       </div>
+      {/* <button className="bg-black h-4 w-4 rounded-full">       
+      </button> */}
     </div>
   );
 }
