@@ -23,9 +23,8 @@
 }
 
 .s_list_itemR:hover {
-    /* cursor: pointer; */
-    /* background-color: #e4e4e4; */
     border-right-color: red;
+    background-color: #efeded;
 }
 
 .s_list_outerR {
@@ -44,7 +43,7 @@
 }
 @media (min-width: 768px) {
     .side-menuR {
-        width: 50%;
-        right: -50%;
+        width: 40%;
+        right: -40%;
     }
 }

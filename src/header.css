@@ -15,7 +15,8 @@
 }
 
 .h_cart_track_count {
-    font-family: 'Ultra', serif;
+    font-family: Roboto, serif;
+    font-weight: 900;
     text-align: center;
 }
 

@@ -1,21 +1,46 @@
 import React, {
   createContext,
-  useState,
   ReactNode,
+  useReducer,
 } from "react";
 
-class Item {
-    name: string;
-    count: number;
+import { reducer } from "./reducer";
+import { Action } from "./action";
 
-    constructor(name: string, count: number) {
+export class Category {
+  title: string;
+  roster: Item[];
+
+  constructor(title: string = "Placeholder", roster: Item[] = 
+    [new Item("Scicilian-#001"),
+     new Item("Margarita-#002"),
+     new Item("Cheese-#003")]) {
+    this.title = title
+    this.roster = roster
+  }
+}
+
+export class Item {
+    name: string;
+    descr: string;
+    img: string; // Path to image
+    count: number;
+    price: number;
+    /** Rework to include images and descriptions */
+
+    constructor(name: string, price: number = -1, 
+                descr: string = "No DescriptionNo DescriptionNo Description", img: string = "/images/NoImageImage.jpg") {
         this.name = name;
-        this.count = count;
+        this.price = price;
+        this.descr = descr;
+        this.count = 1;
+        this.img = img;
     }
 }
 // Define the shape of the state
 export interface State {
   shoppingCart: Item[];
+  categories: Category[];
 
   rightSideIsOpen: boolean;
   setRightSideIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -24,12 +49,19 @@ export interface State {
   setLeftSideIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 // Create the context with the initial state
-const StateContext = createContext<State>({
+const initialState: State = {
   shoppingCart: [],
+  categories: [new Category(), new Category],
+
   rightSideIsOpen: false,
   setRightSideIsOpen: () => {},
   leftSideIsOpen: false,
   setLeftSideIsOpen: () => {},
+}
+
+const StateContext = createContext<{ state: State; dispatch: React.Dispatch<Action> }>({
+  state: initialState,
+  dispatch: () => {},
 });
 
 interface StateProviderProps {
@@ -37,19 +69,10 @@ interface StateProviderProps {
 }
 
 const StateProvider: React.FC<StateProviderProps> = ({ children }) =>  {
-  const [leftSideIsOpen, setLeftSideIsOpen] = useState(false);
-  const [rightSideIsOpen, setRightSideIsOpen] = useState(false);
-  // Your state and state update logic here
-  const stateValues: State = {
-    shoppingCart: [new Item('Sicilian', 1), new Item('Margarits', 2) ],
-    rightSideIsOpen,
-    setRightSideIsOpen,
-    leftSideIsOpen,
-    setLeftSideIsOpen,
-  };
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <StateContext.Provider value={stateValues}>
+    <StateContext.Provider value={{state, dispatch}}>
       {children}
     </StateContext.Provider>
   );

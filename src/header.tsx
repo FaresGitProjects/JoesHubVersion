@@ -5,23 +5,31 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
 import { StateContext } from 'StateProvider';
-import { State } from 'StateProvider';
+import { ActionTypes } from 'action';
+import { formatPrice } from 'utils/utils';
 
 // interface HeaderProps {
 //     children: React.ReactNode;
 //   }
 
-const Header: React.FC = () =>  {
-    const sc = useContext<State>(StateContext);
+const Header: React.FC = () => {
+    const {state, dispatch} = useContext(StateContext);
+
 
     function toggleMenu(side: string) {
         if(side==="right") {
-            sc.setRightSideIsOpen(!sc.rightSideIsOpen);
-            sc.setLeftSideIsOpen(false);
+            dispatch({type: ActionTypes.TOGGLE_RIGHT_SIDE})
+            // sc.setRightSideIsOpen(!sc.rightSideIsOpen);
+            if(state.leftSideIsOpen) {
+                dispatch({type: ActionTypes.TOGGLE_LEFT_SIDE})
+            }
         }
         else if(side==="left") {
-            sc.setLeftSideIsOpen(!sc.leftSideIsOpen);
-            sc.setRightSideIsOpen(false);
+            dispatch({type: ActionTypes.TOGGLE_LEFT_SIDE})
+            // sc.setRightSideIsOpen(!sc.rightSideIsOpen);
+            if(state.rightSideIsOpen) {
+                dispatch({type: ActionTypes.TOGGLE_RIGHT_SIDE})
+            }
         }
     }
 
@@ -50,7 +58,7 @@ const Header: React.FC = () =>  {
                         Menu
                         <FontAwesomeIcon icon={faAngleDown} 
                         className={`mt-0.5 mx-1.5 transition-transform duration-200
-                        ease-out ${sc.leftSideIsOpen?'-rotate-180':''}`}/>
+                        ease-out ${state.leftSideIsOpen?'-rotate-180':''}`}/>
                     </span>
                 </div>
             </nav>
@@ -67,9 +75,16 @@ const Header: React.FC = () =>  {
                     <div className='h_cart_track
                         pr-2'>
                         <p className='h_cart_track_count 
-                        border-b-2 border-b-black'>5</p>
+                        border-b-2 border-b-black'>{state.shoppingCart.reduce((prev, curr)=>{
+                            return prev + curr.count;
+                            }, 0)}
+                        </p>
                         <p className='h_cart_track_total
-                        border-b-2 border-b-black'>$ 0.00</p>
+                        border-b-2 border-b-black'>{
+                            formatPrice(state.shoppingCart.reduce((prev, curr) => (
+                                prev + curr.price*curr.count
+                            ), 0))
+                        }</p>
                     </div>
                     <FontAwesomeIcon className='text-4xl' icon={faCartShopping} />
                 </div>

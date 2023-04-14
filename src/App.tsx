@@ -7,6 +7,7 @@ import RightSideBar from './rightSideBar';
 import { StateContext, StateProvider } from 'StateProvider';
 import { useContext } from 'react';
 import Body from './body';
+import './App.css';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
 }
 
 function AppContent() {
-  const sc = useContext(StateContext);
+  const {state, dispatch} = useContext(StateContext);
   return (
     <div className="App">
       {/* <div className={`overlay 
