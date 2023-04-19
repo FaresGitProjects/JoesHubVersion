@@ -1,12 +1,12 @@
-
-import { Item } from "./StateProvider";
+import { Item } from './StateProvider';
 
 export enum ActionTypes {
   TOGGLE_LEFT_SIDE,
   TOGGLE_RIGHT_SIDE,
+  SET_METHOD,
   ADD_ITEM,
   REMOVE_ITEM,
-  UPDATE_ITEM_COUNT
+  UPDATE_ITEM_COUNT,
 }
 
 // Actions.ts
@@ -17,6 +17,11 @@ export interface ToggleLeftSideAction {
 
 export interface ToggleRightSideAction {
   type: ActionTypes.TOGGLE_RIGHT_SIDE;
+}
+
+export interface SetMethodAction {
+  type: ActionTypes.SET_METHOD;
+  payload: boolean;
 }
 
 export interface AddItemAction {
@@ -30,16 +35,17 @@ export interface RemoveItemAction {
 }
 
 export interface UpdateItemCountAction {
-    type: ActionTypes.UPDATE_ITEM_COUNT;
-    payload: {
-      name: string; // Assuming the name is unique for each item
-      newCount: number;
-    };
-  }
+  type: ActionTypes.UPDATE_ITEM_COUNT;
+  payload: {
+    name: string; // Assuming the name is unique for each item
+    newCount: number;
+  };
+}
 
 export type Action =
   | ToggleLeftSideAction
   | ToggleRightSideAction
+  | SetMethodAction
   | AddItemAction
   | RemoveItemAction
   | UpdateItemCountAction;

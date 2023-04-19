@@ -16,13 +16,17 @@ interface ItemProps {
 
 function Item({ img, title, descr, price }: ItemProps) {
   const { state, dispatch } = useContext(StateContext);
-  
+
   return (
     <div
       className="item
     sm:mr-5 my-2.5 shadow-neutral-600
-    shadow-md border-black sm:block flex
-    rounded-lg relative sm:max-w-sm w-auto"
+    shadow-lg sm:block flex hover:shadow-lg
+    hover:shadow-red-500 border-t-red-400
+    border-t-2
+    rounded-lg relative sm:max-w-sm w-auto
+    transition-color transition-shadow 
+    duration-200 ease-out"
     >
       <div
         onClick={() => addUnit(title, price, dispatch, state)}
@@ -67,10 +71,10 @@ function Item({ img, title, descr, price }: ItemProps) {
       </div>
       <div
         className="count-container
-      justify-center py-5 bg-slate-200
+      justify-center py-5 bg-red-200
       sm:block hidden"
       >
-        <Counter itemName={title} itemPrice={price}/>
+        <Counter itemName={title} itemPrice={price} />
       </div>
     </div>
   );
