@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/JoesHubVersion/static/css/main.54de37c1.css",
-    "main.js": "/JoesHubVersion/static/js/main.6be05652.js",
+    "main.css": "/JoesHubVersion/static/css/main.c20b21a3.css",
+    "main.js": "/JoesHubVersion/static/js/main.5790d017.js",
     "index.html": "/JoesHubVersion/index.html",
-    "main.54de37c1.css.map": "/JoesHubVersion/static/css/main.54de37c1.css.map",
-    "main.6be05652.js.map": "/JoesHubVersion/static/js/main.6be05652.js.map"
+    "main.c20b21a3.css.map": "/JoesHubVersion/static/css/main.c20b21a3.css.map",
+    "main.5790d017.js.map": "/JoesHubVersion/static/js/main.5790d017.js.map"
   },
   "entrypoints": [
-    "static/css/main.54de37c1.css",
-    "static/js/main.6be05652.js"
+    "static/css/main.c20b21a3.css",
+    "static/js/main.5790d017.js"
   ]
 }
