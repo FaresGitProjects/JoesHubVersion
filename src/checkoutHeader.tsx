@@ -23,7 +23,7 @@ const CheckoutHeader: React.FC = () => {
                 sm:ml-8
                 "
                 >
-                    Joe&#39;s
+                    Alex&#39;s
                 </nav>
             </Link>
             <nav
