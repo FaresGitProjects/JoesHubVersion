@@ -23,12 +23,13 @@ function Welcome() {
         <span className="text-orange-500">t</span>
         <span className="text-green-500">o</span>
         <span className="text-orange-500"> </span>
-        <span className="text-red-500">J</span>
-        <span className="text-green-700">o</span>
+        <span className="text-red-500">A</span>
+        <span className="text-green-700">l</span>
         <span className="text-red-500">e</span>
-        <span className="text-green-700">'</span>
-        <span className="text-red-500">s</span>
-        <span className="text-green-700">!</span>
+        <span className="text-green-700">x</span>
+        <span className="text-red-500">'</span>
+        <span className="text-green-700">s</span>
+        span className="text-red-500">!</span>
       </h1>
       <p className='w_body
       text-2xl w-3/4 sm:w-1/2 text-center'>
