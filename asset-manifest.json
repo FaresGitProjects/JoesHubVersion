@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.3dba37b7.css",
-    "main.js": "/static/js/main.d543b9ce.js",
-    "index.html": "/index.html",
-    "main.3dba37b7.css.map": "/static/css/main.3dba37b7.css.map",
-    "main.d543b9ce.js.map": "/static/js/main.d543b9ce.js.map"
+    "main.css": "/AlexHubVersion/static/css/main.3dba37b7.css",
+    "main.js": "/AlexHubVersion/static/js/main.d543b9ce.js",
+    "index.html": "/AlexHubVersion/index.html",
+    "main.3dba37b7.css.map": "/AlexHubVersion/static/css/main.3dba37b7.css.map",
+    "main.d543b9ce.js.map": "/AlexHubVersion/static/js/main.d543b9ce.js.map"
   },
   "entrypoints": [
     "static/css/main.3dba37b7.css",
